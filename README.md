@@ -1,7 +1,7 @@
 # piMeter - a SmartMeter for Raspberry Pi
 
 This is the software for the [piMeter_hardware](https://github.com/digitaldex/piMeter_hardware).
-You need a running InfluxDB and Grafana installation. A Tutorial on how to get in Running can be found [here](https://www.digitaldex.de/new-frontend-for-pimeter/)
+You need a running InfluxDB and Grafana installation. A Tutorial on how to setup can be found [here](https://www.digitaldex.de/new-frontend-for-pimeter/)
 
 ## The Software
 ![alt text](https://github.com/digitaldex/piMeter_grafana/blob/master/visu/GrafanaExample.png "Eagle Board Screenshot")
