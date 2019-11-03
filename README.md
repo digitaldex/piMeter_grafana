@@ -25,8 +25,9 @@ sudo make check
 sudo make install
 ```
 ### Change influxdb credentials in main.cpp
-ˋˋˋ
-IP, DB, user and password
+```
+influxdb_cpp::server_info si("IP", 8086, "DB", "user", "password");
+```
 ### Build piMeter
 ```
 g++ main.cpp spiComm.cpp -o piMeter -lbcm2835
