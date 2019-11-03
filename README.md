@@ -24,6 +24,9 @@ make
 sudo make check
 sudo make install
 ```
+### Change influxdb credentials in main.cpp
+ˋˋˋ
+IP, DB, user and password
 ### Build piMeter
 ```
 g++ main.cpp spiComm.cpp -o piMeter -lbcm2835
