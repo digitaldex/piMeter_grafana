@@ -150,8 +150,8 @@
       },
       "gridPos": {
         "h": 2,
-        "w": 11,
-        "x": 13,
+        "w": 12,
+        "x": 12,
         "y": 0
       },
       "id": 22,
@@ -241,7 +241,11 @@
       "valueName": "current"
     },
     {
-      "aliasColors": {},
+      "aliasColors": {
+        "L1": "green",
+        "L2": "green",
+        "L3": "green"
+      },
       "bars": true,
       "dashLength": 10,
       "dashes": false,
@@ -249,11 +253,12 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 6,
-        "w": 24,
+        "h": 12,
+        "w": 12,
         "x": 0,
         "y": 2
       },
+      "hiddenSeries": false,
       "id": 21,
       "legend": {
         "alignAsTable": true,
@@ -436,7 +441,384 @@
       }
     },
     {
-      "aliasColors": {},
+      "aliasColors": {
+        "L1": "green",
+        "L2": "green",
+        "L3": "green"
+      },
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 12,
+        "w": 12,
+        "x": 12,
+        "y": 2
+      },
+      "hiddenSeries": false,
+      "id": 23,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": false,
+        "total": true,
+        "values": true
+      },
+      "lines": false,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null as zero",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "L1",
+          "groupBy": [
+            {
+              "params": [
+                "1d"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "energy",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "WirkenergieL1"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              }
+            ]
+          ],
+          "tags": []
+        },
+        {
+          "alias": "L2",
+          "groupBy": [
+            {
+              "params": [
+                "1d"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "energy",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "WirkenergieL2"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              }
+            ]
+          ],
+          "tags": []
+        },
+        {
+          "alias": "L3",
+          "groupBy": [
+            {
+              "params": [
+                "1d"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "energy",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "WirkenergieL3"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": "now/M",
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Verbrauch / Tag",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "watth",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aggregate": "SUM",
+      "color": {
+        "colorScheme": "interpolateRdYlGn",
+        "colorSpace": "RGB",
+        "customColors": [
+          {
+            "color": "#006837"
+          },
+          {
+            "color": "#aa0526"
+          }
+        ],
+        "invert": false,
+        "mode": "SPECTRUM",
+        "nullColor": "rgba(0, 0, 0, 0)"
+      },
+      "data": {
+        "decimals": 2,
+        "unitFormat": "watth"
+      },
+      "datasource": null,
+      "fragment": "HOUR",
+      "gridPos": {
+        "h": 12,
+        "w": 24,
+        "x": 0,
+        "y": 14
+      },
+      "hideTimeOverride": true,
+      "id": 24,
+      "legend": {
+        "show": false
+      },
+      "links": [],
+      "options": {},
+      "scale": {
+        "max": 1000,
+        "min": 0
+      },
+      "targets": [
+        {
+          "alias": "L1",
+          "groupBy": [
+            {
+              "params": [
+                "1h"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "energy",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "WirkenergieL1"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              }
+            ]
+          ],
+          "tags": []
+        },
+        {
+          "alias": "L2",
+          "groupBy": [
+            {
+              "params": [
+                "1h"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "energy",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "WirkenergieL2"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              }
+            ]
+          ],
+          "tags": []
+        },
+        {
+          "alias": "L3",
+          "groupBy": [
+            {
+              "params": [
+                "1h"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "energy",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "WirkenergieL3"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "timeFrom": "now/y",
+      "timeShift": null,
+      "title": "Dieses Jahr",
+      "tooltip": {
+        "show": true
+      },
+      "type": "petrslavotinek-carpetplot-panel",
+      "xAxis": {
+        "labelFormat": "%a %d",
+        "minBucketWidthToShowWeekends": 4,
+        "show": true,
+        "showCrosshair": true,
+        "showWeekends": true
+      },
+      "yAxis": {
+        "hideLabels": false,
+        "show": true,
+        "showCrosshair": true
+      }
+    },
+    {
+      "aliasColors": {
+        "Strom L1": "red",
+        "Strom L2": "purple",
+        "Strom L3": "orange"
+      },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
@@ -445,11 +827,12 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 9,
+        "h": 10,
         "w": 12,
         "x": 0,
-        "y": 8
+        "y": 26
       },
+      "hiddenSeries": false,
       "id": 2,
       "legend": {
         "alignAsTable": true,
@@ -632,7 +1015,11 @@
       }
     },
     {
-      "aliasColors": {},
+      "aliasColors": {
+        "Spannung L1": "red",
+        "Spannung L2": "purple",
+        "Spannung L3": "orange"
+      },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
@@ -641,22 +1028,23 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 9,
+        "h": 10,
         "w": 12,
         "x": 12,
-        "y": 8
+        "y": 26
       },
+      "hiddenSeries": false,
       "id": 5,
       "legend": {
-        "alignAsTable": true,
+        "alignAsTable": false,
         "avg": false,
-        "current": true,
-        "max": true,
-        "min": true,
+        "current": false,
+        "max": false,
+        "min": false,
         "rightSide": false,
         "show": true,
         "total": false,
-        "values": true
+        "values": false
       },
       "lines": true,
       "linewidth": 1,
@@ -828,15 +1216,15 @@
       }
     }
   ],
-  "refresh": false,
-  "schemaVersion": 20,
+  "refresh": "5m",
+  "schemaVersion": 21,
   "style": "dark",
   "tags": [],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {
@@ -867,5 +1255,5 @@
   "timezone": "",
   "title": "piMeter",
   "uid": "ES9M3o2ik",
-  "version": 38
+  "version": 71
 }
