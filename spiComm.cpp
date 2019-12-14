@@ -18,9 +18,9 @@ spiComm::~spiComm() {
 }
 
 int spiComm::initSPI() {
-	/* Initialize the Raspberry SPI Bus and Enable ADE9000 */
-	bcm2835_init();
-	bcm2835_gpio_fsel(PIN, BCM2835_GPIO_FSEL_OUTP);
+    /* Initialize the Raspberry SPI Bus and Enable ADE9000 */
+    bcm2835_init();
+    bcm2835_gpio_fsel(PIN, BCM2835_GPIO_FSEL_OUTP);
     bcm2835_gpio_write(PIN, HIGH);
     if(!bcm2835_init()) {
         return 1;
@@ -43,20 +43,20 @@ void spiComm::closeSPI() {
 
 void spiComm::resizeWord16(char byte[], unsigned short word) {
     /* Split 16bit SPI Commmand Word into 2 Bytes for Read Operation */
-	byte[0] = word >> 8;
-	byte[1] = word & 0xFF;
+    byte[0] = word >> 8;
+    byte[1] = word & 0xFF;
 }
 
 void spiComm::resizeWord32(char byte[], unsigned int word) {
     /* Split 32bit SPI Commmand Word into 4 Bytes for Write Operation */
-	byte[0] = word >> 24;
-	byte[1] = word >> 16;
-	byte[2] = word >> 8;
-	byte[3] = word & 0xFF;
+    byte[0] = word >> 24;
+    byte[1] = word >> 16;
+    byte[2] = word >> 8;
+    byte[3] = word & 0xFF;
 }
 
 void spiComm::resizeWord48(char byte[], uint64_t word) {
-	/* Split 48bit SPI Commmand Word into 6 Bytes for Write Operation */
+    /* Split 48bit SPI Commmand Word into 6 Bytes for Write Operation */
     byte[0] = word >> 40;
     byte[1] = word >> 32;
     byte[2] = word >> 24;
@@ -78,23 +78,23 @@ uint32_t spiComm::parse32bitReturnValue(char byte[]) {
     value <<= 8;
     value |= (uint8_t)byte[5];
     /* DEBUG
-    uint16_t crc = 0;
-    crc = (uint8_t)byte[6];
-    crc <<= 8;
-    crc |= (uint8_t)byte[7];
-    cout << "DEBUG: " << hex << value << " CRC: " << crc << endl;
-    */
+       uint16_t crc = 0;
+       crc = (uint8_t)byte[6];
+       crc <<= 8;
+       crc |= (uint8_t)byte[7];
+       cout << "DEBUG: " << hex << value << " CRC: " << crc << endl;
+     */
     return value;
 }
 
 uint16_t spiComm::parse16bitReturnValue(char byte[]) {
     /* Shift Char Array into uint16_t */
     /* First two Bytes are SPI Read Command Echo */
-	uint16_t value = 0;
-	value = (uint8_t)byte[2];
-	value <<= 8;
-	value |= (uint8_t)byte[3];
-	return value;
+    uint16_t value = 0;
+    value = (uint8_t)byte[2];
+    value <<= 8;
+    value |= (uint8_t)byte[3];
+    return value;
 }
 
 void spiComm::writeSPI(unsigned int word) {

@@ -84,26 +84,26 @@ using namespace std;
 #define PIN 		        	RPI_BPLUS_GPIO_J8_37
 
 class spiComm {
-	public:
-		spiComm();
-		~spiComm();
-		float readCurrent(unsigned short word);
-		float readVoltage(unsigned short word);
-		float readPower(unsigned short word);
-		float readEnergy(unsigned short word);
+    public:
+        spiComm();
+        ~spiComm();
+        float readCurrent(unsigned short word);
+        float readVoltage(unsigned short word);
+        float readPower(unsigned short word);
+        float readEnergy(unsigned short word);
 
 
-	private:
-		int initSPI();
-		void closeSPI();
-		void resizeWord16(char byte[], unsigned short word);
-		void resizeWord32(char byte[], unsigned int word);
-		void resizeWord48(char byte[], uint64_t word);
-		uint32_t parse32bitReturnValue(char byte[]);
-		uint16_t parse16bitReturnValue(char byte[]);
-		void writeSPI(unsigned int word);
-		void writeSPIlong(uint64_t word);
-		
+    private:
+        int initSPI();
+        void closeSPI();
+        void resizeWord16(char byte[], unsigned short word);
+        void resizeWord32(char byte[], unsigned int word);
+        void resizeWord48(char byte[], uint64_t word);
+        uint32_t parse32bitReturnValue(char byte[]);
+        uint16_t parse16bitReturnValue(char byte[]);
+        void writeSPI(unsigned int word);
+        void writeSPIlong(uint64_t word);
+
 };
 
 #endif
