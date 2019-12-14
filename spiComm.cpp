@@ -1,9 +1,9 @@
 #include "spiComm.h"
 
 spiComm::spiComm() {
-	/* start Init of BCM2835 and Write ADE9000 Register to defined values for Measuring - See StartUp Routine in Datasheet */
-	initSPI();
-	writeSPI(W_RUN_REGISTER_STOP);
+    /* start Init of BCM2835 and Write ADE9000 Register to defined values for Measuring - See StartUp Routine in Datasheet */
+    initSPI();
+    writeSPI(W_RUN_REGISTER_STOP);
     writeSPI(W_PGA_GAIN_REGISTER);
     writeSPIlong(W_VLEVEL_REGISTER);
     writeSPI(W_ACCMODE_REGISTER);
@@ -14,7 +14,7 @@ spiComm::spiComm() {
 }
 
 spiComm::~spiComm() {
-	closeSPI();
+    closeSPI();
 }
 
 int spiComm::initSPI() {
