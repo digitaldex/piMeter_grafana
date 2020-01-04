@@ -1,11 +1,8 @@
 # piMeter - a SmartMeter for Raspberry Pi
 
-This is the software for the [piMeter_hardware](https://github.com/digitaldex/piMeter_hardware).
+This repo contains the software for the [piMeter_hardware](https://github.com/digitaldex/piMeter_hardware) project.
 You need a running InfluxDB and Grafana installation. A Tutorial on how to setup can be found
-[here](https://www.digitaldex.de/blog/new-frontend-for-opensource-smartmeter/)
-
-## The Software
-![alt text](https://github.com/digitaldex/piMeter_grafana/blob/master/visu/GrafanaExample.png "Eagle Board Screenshot")
+at [www.digitaldex.de](https://www.digitaldex.de/blog/new-frontend-for-opensource-smartmeter/)
 
 ## Setup Raspberry Pi
 
@@ -37,3 +34,9 @@ g++ main.cpp spiComm.cpp -o piMeter -lbcm2835
 ```
 // bcm2835 Lib needs root
 sudo ./piMeter &
+```
+## Visualization
+![alt text](https://github.com/digitaldex/piMeter_grafana/blob/master/visu/GrafanaExample.png "Grafana Dashboard")
+```
+Example Grafana piMeter json can be found in the /visu folder
+``` 
