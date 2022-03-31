@@ -36,7 +36,7 @@ g++ main.cpp spiComm.cpp -o piMeter -lbcm2835
 sudo ./piMeter &
 ```
 ## Visualization
-![alt text](https://github.com/digitaldex/piMeter_grafana/blob/master/visu/GrafanaExample.png "Grafana Dashboard")
+![alt text](https://github.com/digitaldex/piMeter_grafana/blob/master/visu/dashbaord.png "Grafana Dashboard")
 ```
-Example Grafana piMeter json can be found in the /visu folder
+Example Grafana Export can be found in the /visu folder
 ``` 
